@@ -1,0 +1,441 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		164DF94C1C8857D300EA5F78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF94B1C8857D300EA5F78 /* AppDelegate.swift */; };
+		164DF94E1C8857D300EA5F78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF94D1C8857D300EA5F78 /* ViewController.swift */; };
+		164DF9511C8857D300EA5F78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164DF94F1C8857D300EA5F78 /* Main.storyboard */; };
+		164DF9531C8857D300EA5F78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 164DF9521C8857D300EA5F78 /* Assets.xcassets */; };
+		164DF9561C8857D300EA5F78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 164DF9541C8857D300EA5F78 /* LaunchScreen.storyboard */; };
+		164DF9611C8857D300EA5F78 /* MagicMirrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF9601C8857D300EA5F78 /* MagicMirrorTests.swift */; };
+		164DF9711C88580800EA5F78 /* CameraAccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF96C1C88580800EA5F78 /* CameraAccessView.swift */; };
+		164DF9721C88580800EA5F78 /* CameraAccessView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 164DF96D1C88580800EA5F78 /* CameraAccessView.xib */; };
+		164DF9731C88580800EA5F78 /* QRScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF96E1C88580800EA5F78 /* QRScannerController.swift */; };
+		164DF9741C88580800EA5F78 /* ScanNotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF96F1C88580800EA5F78 /* ScanNotificationViewController.swift */; };
+		164DF9751C88580800EA5F78 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF9701C88580800EA5F78 /* ScanViewController.swift */; };
+		164DF9781C885B9000EA5F78 /* GCD+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164DF9771C885B9000EA5F78 /* GCD+Swift.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		164DF95D1C8857D300EA5F78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 164DF9401C8857D300EA5F78 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 164DF9471C8857D300EA5F78;
+			remoteInfo = MagicMirror;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		164DF9481C8857D300EA5F78 /* MagicMirror.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMirror.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		164DF94B1C8857D300EA5F78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		164DF94D1C8857D300EA5F78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		164DF9501C8857D300EA5F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		164DF9521C8857D300EA5F78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		164DF9551C8857D300EA5F78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		164DF9571C8857D300EA5F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		164DF95C1C8857D300EA5F78 /* MagicMirrorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicMirrorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		164DF9601C8857D300EA5F78 /* MagicMirrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMirrorTests.swift; sourceTree = "<group>"; };
+		164DF9621C8857D300EA5F78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		164DF96C1C88580800EA5F78 /* CameraAccessView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraAccessView.swift; sourceTree = "<group>"; };
+		164DF96D1C88580800EA5F78 /* CameraAccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraAccessView.xib; sourceTree = "<group>"; };
+		164DF96E1C88580800EA5F78 /* QRScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerController.swift; sourceTree = "<group>"; };
+		164DF96F1C88580800EA5F78 /* ScanNotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanNotificationViewController.swift; sourceTree = "<group>"; };
+		164DF9701C88580800EA5F78 /* ScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		164DF9771C885B9000EA5F78 /* GCD+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GCD+Swift.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		164DF9451C8857D300EA5F78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		164DF9591C8857D300EA5F78 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		164DF93F1C8857D300EA5F78 = {
+			isa = PBXGroup;
+			children = (
+				164DF94A1C8857D300EA5F78 /* MagicMirror */,
+				164DF95F1C8857D300EA5F78 /* MagicMirrorTests */,
+				164DF9491C8857D300EA5F78 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		164DF9491C8857D300EA5F78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				164DF9481C8857D300EA5F78 /* MagicMirror.app */,
+				164DF95C1C8857D300EA5F78 /* MagicMirrorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		164DF94A1C8857D300EA5F78 /* MagicMirror */ = {
+			isa = PBXGroup;
+			children = (
+				164DF9761C885B8200EA5F78 /* Foundation */,
+				164DF96B1C88580800EA5F78 /* Scan */,
+				164DF94B1C8857D300EA5F78 /* AppDelegate.swift */,
+				164DF94D1C8857D300EA5F78 /* ViewController.swift */,
+				164DF94F1C8857D300EA5F78 /* Main.storyboard */,
+				164DF9521C8857D300EA5F78 /* Assets.xcassets */,
+				164DF9541C8857D300EA5F78 /* LaunchScreen.storyboard */,
+				164DF9571C8857D300EA5F78 /* Info.plist */,
+			);
+			path = MagicMirror;
+			sourceTree = "<group>";
+		};
+		164DF95F1C8857D300EA5F78 /* MagicMirrorTests */ = {
+			isa = PBXGroup;
+			children = (
+				164DF9601C8857D300EA5F78 /* MagicMirrorTests.swift */,
+				164DF9621C8857D300EA5F78 /* Info.plist */,
+			);
+			path = MagicMirrorTests;
+			sourceTree = "<group>";
+		};
+		164DF96B1C88580800EA5F78 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				164DF96C1C88580800EA5F78 /* CameraAccessView.swift */,
+				164DF96D1C88580800EA5F78 /* CameraAccessView.xib */,
+				164DF96E1C88580800EA5F78 /* QRScannerController.swift */,
+				164DF96F1C88580800EA5F78 /* ScanNotificationViewController.swift */,
+				164DF9701C88580800EA5F78 /* ScanViewController.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		164DF9761C885B8200EA5F78 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				164DF9771C885B9000EA5F78 /* GCD+Swift.swift */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		164DF9471C8857D300EA5F78 /* MagicMirror */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 164DF9651C8857D300EA5F78 /* Build configuration list for PBXNativeTarget "MagicMirror" */;
+			buildPhases = (
+				164DF9441C8857D300EA5F78 /* Sources */,
+				164DF9451C8857D300EA5F78 /* Frameworks */,
+				164DF9461C8857D300EA5F78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicMirror;
+			productName = MagicMirror;
+			productReference = 164DF9481C8857D300EA5F78 /* MagicMirror.app */;
+			productType = "com.apple.product-type.application";
+		};
+		164DF95B1C8857D300EA5F78 /* MagicMirrorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 164DF9681C8857D300EA5F78 /* Build configuration list for PBXNativeTarget "MagicMirrorTests" */;
+			buildPhases = (
+				164DF9581C8857D300EA5F78 /* Sources */,
+				164DF9591C8857D300EA5F78 /* Frameworks */,
+				164DF95A1C8857D300EA5F78 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				164DF95E1C8857D300EA5F78 /* PBXTargetDependency */,
+			);
+			name = MagicMirrorTests;
+			productName = MagicMirrorTests;
+			productReference = 164DF95C1C8857D300EA5F78 /* MagicMirrorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		164DF9401C8857D300EA5F78 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = NewStore;
+				TargetAttributes = {
+					164DF9471C8857D300EA5F78 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+					164DF95B1C8857D300EA5F78 = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = 164DF9471C8857D300EA5F78;
+					};
+				};
+			};
+			buildConfigurationList = 164DF9431C8857D300EA5F78 /* Build configuration list for PBXProject "MagicMirror" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 164DF93F1C8857D300EA5F78;
+			productRefGroup = 164DF9491C8857D300EA5F78 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				164DF9471C8857D300EA5F78 /* MagicMirror */,
+				164DF95B1C8857D300EA5F78 /* MagicMirrorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		164DF9461C8857D300EA5F78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				164DF9561C8857D300EA5F78 /* LaunchScreen.storyboard in Resources */,
+				164DF9531C8857D300EA5F78 /* Assets.xcassets in Resources */,
+				164DF9511C8857D300EA5F78 /* Main.storyboard in Resources */,
+				164DF9721C88580800EA5F78 /* CameraAccessView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		164DF95A1C8857D300EA5F78 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		164DF9441C8857D300EA5F78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				164DF94E1C8857D300EA5F78 /* ViewController.swift in Sources */,
+				164DF9731C88580800EA5F78 /* QRScannerController.swift in Sources */,
+				164DF94C1C8857D300EA5F78 /* AppDelegate.swift in Sources */,
+				164DF9781C885B9000EA5F78 /* GCD+Swift.swift in Sources */,
+				164DF9711C88580800EA5F78 /* CameraAccessView.swift in Sources */,
+				164DF9741C88580800EA5F78 /* ScanNotificationViewController.swift in Sources */,
+				164DF9751C88580800EA5F78 /* ScanViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		164DF9581C8857D300EA5F78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				164DF9611C8857D300EA5F78 /* MagicMirrorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		164DF95E1C8857D300EA5F78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 164DF9471C8857D300EA5F78 /* MagicMirror */;
+			targetProxy = 164DF95D1C8857D300EA5F78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		164DF94F1C8857D300EA5F78 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164DF9501C8857D300EA5F78 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		164DF9541C8857D300EA5F78 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				164DF9551C8857D300EA5F78 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		164DF9631C8857D300EA5F78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		164DF9641C8857D300EA5F78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		164DF9661C8857D300EA5F78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicMirror/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewStore.MagicMirror;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		164DF9671C8857D300EA5F78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MagicMirror/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewStore.MagicMirror;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		164DF9691C8857D300EA5F78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagicMirrorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewStore.MagicMirrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicMirror.app/MagicMirror";
+			};
+			name = Debug;
+		};
+		164DF96A1C8857D300EA5F78 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MagicMirrorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.NewStore.MagicMirrorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicMirror.app/MagicMirror";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		164DF9431C8857D300EA5F78 /* Build configuration list for PBXProject "MagicMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				164DF9631C8857D300EA5F78 /* Debug */,
+				164DF9641C8857D300EA5F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		164DF9651C8857D300EA5F78 /* Build configuration list for PBXNativeTarget "MagicMirror" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				164DF9661C8857D300EA5F78 /* Debug */,
+				164DF9671C8857D300EA5F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		164DF9681C8857D300EA5F78 /* Build configuration list for PBXNativeTarget "MagicMirrorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				164DF9691C8857D300EA5F78 /* Debug */,
+				164DF96A1C8857D300EA5F78 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 164DF9401C8857D300EA5F78 /* Project object */;
+}

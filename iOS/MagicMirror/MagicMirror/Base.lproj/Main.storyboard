@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Scan View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ScanViewController" customModule="MagicMirror" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRa-aC-fAd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.97254902119999997" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ScannerContainerView"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoS-td-Zxo">
+                                <rect key="frame" x="0.0" y="519" width="600" height="81"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place the Barcode in the middle of the window. Search will begin automatically and results will be displayed." lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fp-ix-SP4">
+                                        <rect key="frame" x="36" y="23" width="534" height="47"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="InstructionLabel"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ShadowView"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="6fp-ix-SP4" secondAttribute="bottom" constant="11" id="5Yw-tz-bQi"/>
+                                    <constraint firstItem="6fp-ix-SP4" firstAttribute="leading" secondItem="UoS-td-Zxo" secondAttribute="leading" constant="36" id="5r3-nc-7MM"/>
+                                    <constraint firstItem="6fp-ix-SP4" firstAttribute="top" secondItem="UoS-td-Zxo" secondAttribute="top" constant="23" id="BME-3p-iim"/>
+                                    <constraint firstAttribute="trailing" secondItem="6fp-ix-SP4" secondAttribute="trailing" constant="30" id="KwV-vK-bwo"/>
+                                    <constraint firstAttribute="height" constant="81" id="aXu-oD-zQI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="BRa-aC-fAd" secondAttribute="bottom" id="7lF-YQ-Dly"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UoS-td-Zxo" secondAttribute="trailing" constant="-20" id="BN8-UX-Sqv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BRa-aC-fAd" secondAttribute="trailing" constant="-20" id="KLR-1I-LAe"/>
+                            <constraint firstItem="BRa-aC-fAd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Vc8-sQ-BnW"/>
+                            <constraint firstItem="UoS-td-Zxo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Zd8-wf-UIO"/>
+                            <constraint firstItem="BRa-aC-fAd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gKv-7M-2do"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UoS-td-Zxo" secondAttribute="bottom" id="kcd-8P-Cc4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailsView" destination="UoS-td-Zxo" id="yS6-yU-9x3"/>
+                        <outlet property="scannerContainerView" destination="BRa-aC-fAd" id="Xb4-VK-rWO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
