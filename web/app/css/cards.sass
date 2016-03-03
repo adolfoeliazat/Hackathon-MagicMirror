@@ -1,0 +1,44 @@
+$card-width: 372px
+$card-height: 380px
+
+#cards-main
+  width: 100%
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: center
+  align-content: flex-start
+  align-items: flex-center
+  cursor: pointer
+  min-width: $min-width
+  .card
+    width: $card-width
+    height: $card-height
+    margin: 26px
+    border: 1px solid $color-haze-grey
+    .card-img
+      width: $card-width
+      height: 150px
+    .card-meta
+      .card-header
+        margin: 26px auto
+        text-align: center
+        h3
+          margin: 0
+          font-weight: $font-weight-bold
+        p
+          margin: 0
+          color: $color-boulder-grey
+          font-size: 12px
+      .card-kpi
+        div
+          float: left
+          margin: 0 12px 0 18px
+          width: 78px
+          h6
+            color: $color-bombay-grey
+            font-size: 12px
+            padding-left: 2px
+          >span
+            font-size: 22px
+            font-weight: $font-weight-bold

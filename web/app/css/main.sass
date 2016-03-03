@@ -1,0 +1,105 @@
+// Dependendcies
+@import "foundation/foundation.sass"
+
+// General imports
+@import "variables.sass"
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak
+  display: none !important
+
+*
+  -webkit-font-smoothing: subpixel-antialiased
+
+body
+  width: 100%
+  background-color: #000
+
+  a
+    color: white
+
+#navigation
+  position: relative
+
+  #logo
+    position: absolute
+    top: 20px
+    right: 20px
+
+    img
+      width: 50px
+
+  #menu
+    position: absolute
+    text-align: right
+    right: 20px
+    top: 100px
+    a
+      font-size: 40px
+
+#main
+  position: absolute
+  top: 100px
+
+.tile
+  width: 25%
+  float: left
+  position: relative
+
+  .meta
+    position: absolute
+    bottom: 0
+    height: 50px
+    background-color: rgba(0, 0, 0, .5)
+    color: white
+    width: 100%
+    text-align: center
+
+    .title
+      font-size: 18px
+      padding-top: 15px
+      vertical-align: middle
+
+  img
+    width: 100%
+
+
+#details-page
+  text-align: center
+  margin: auto
+
+  .details
+    position: relative
+    width: 100%
+    img
+      width: 100%
+
+    .title
+      position: absolute
+      bottom: 0
+      height: 80px
+      font-size: 30px
+      padding-top: 18px
+      background-color: rgba(0, 0, 0, .5)
+      color: white
+      width: 100%
+      text-align: center
+
+    .show-variations-toggler
+      position: absolute
+      right: 20px
+      top: 20px
+      padding: 10px
+      background-color: rgba(0, 0, 0, .5)
+      color: white
+
+      a
+        color: white
+
+
+    .variations
+      position: absolute
+      top: 20px
+      right: 20px
+
+      text-align: right

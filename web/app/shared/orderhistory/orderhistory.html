@@ -1,0 +1,52 @@
+<table id="order-history">
+    <tr ng-repeat-start="event in events">
+        <td>
+            <span>{{event.timestamp | date : 'shortDate'}}</span> <span>{{event.timestamp | date : 'shortTime'}}</span>
+        </td>
+        <td
+            ng-show="event.event_name !== 'declined'"
+            ng-bind-html="event.event_name | statusBadge: 'fixed-width-badge':true"
+        >
+        </td>
+        <td ng-show="event.event_name === 'declined'"></td>
+        <td ng-if="event.event_name === 'pending'" translate>
+            Order was created by customer via <em>{{event.event_data.channel}}</em>
+        </td>
+        <td ng-if="event.event_name === 'declined'" translate>
+            Order was routed to
+            <a href="/settings/employees/users/{{event.event_data.store_associate_id}}">
+                {{event.event_data.store_associate_name}}
+            </a> at the
+            <a href="/distributions/stores/{{event.event_data.store_id}}">
+                {{event.event_data.store_id}}
+            </a> Store and was declined
+        </td>
+        <td ng-if="event.event_name === 'picking'" translate>
+            Order was routed to
+            <a href="/settings/employees/users/{{event.event_data.store_associate_id}}">
+                {{event.event_data.store_associate_name}}
+            </a> at the
+            <a href="/distributions/stores/{{event.event_data.store_id}}">
+                {{event.event_data.store_id}}
+            </a> Store and was accepted
+        </td>
+        <td ng-if="event.event_name === 'packing'" translate>
+            <a href="/settings/employees/users/{{event.event_data.store_associate_id}}">
+                {{event.event_data.store_associate_name}}
+            </a> finished picking and started packing
+        </td>
+        <td ng-if="event.event_name === 'labeling'" translate>
+            <a href="/settings/employees/users/{{event.event_data.store_associate_id}}">
+                {{event.event_data.store_associate_name}}
+            </a> started labeling
+        </td>
+        <td ng-if="event.event_name === 'ready'" translate>Order is ready for pick-up</td>
+        <td ng-if="event.event_name === 'shipped'" translate>
+            <a href="/settings/employees/users/{{event.event_data.store_associate_id}}">
+                {{event.event_data.store_associate_name}}
+            </a> handed order over to delivery driver<br/>
+            Tracking Number <a href="#">{{event.event_data.tracking_number}}</a>
+        </td>
+    </tr>
+    <tr ng-repeat-end></tr>
+</table>

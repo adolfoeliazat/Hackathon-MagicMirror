@@ -1,0 +1,18 @@
+{
+  "development": {
+    "config": {
+      "apiHost": "http://newstoredev.newstore.local:8082",
+      "google": {
+        "apiKey": "AIzaSyCr15aLSPxf_xea2zldxE3tJSGAY5AtrS8"
+      }
+    }
+  },
+  "production": {
+    "config": {
+      "apiHost": "https://newstoredev.newstore.io",
+      "google": {
+        "apiKey": "AIzaSyCr15aLSPxf_xea2zldxE3tJSGAY5AtrS8"
+      }
+    }
+  }
+}

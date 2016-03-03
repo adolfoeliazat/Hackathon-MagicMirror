@@ -1,0 +1,25 @@
+# User Environments
+*~
+*.swp
+.DS_Store
+builder_credential01.sh
+
+# local node module installations
+bower_components/
+node_modules/
+
+# temporary files
+.sass-cache/
+.tmp/
+
+# build
+dist/
+app/css/*.css
+app/css/*.map
+app/config.js
+app/i18n/*.js*
+app/i18n/po/template.pot
+app/i18n/po/*.mo
+
+# test reports
+reports/

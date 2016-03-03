@@ -1,0 +1,33 @@
+<div id="details-page">
+
+  <div class="details">
+    <!-- Title -->
+    <div class="title">
+      {{detailsCtrl.product.title}}
+      {{detailsCtrl.product.variation_color_value}}
+      {{detailsCtrl.product.variation_size_value}}
+    </div>
+
+    <!-- Variation picker -->
+    <div ng-show="!showVariations" class="show-variations-toggler">
+      <a ng-click="showVariations = !!!showVariations">Pick a different color or size...</a>
+    </div>
+
+    <div ng-show="showVariations">
+      <!-- <a ng-click="showVariations = !!!showVariations" class="show-variations-toggler">X</a> -->
+      <div class="variations">
+        <div ng-repeat="variation in detailsCtrl.product.variations" class="variation">
+          <a href="{{detailsCtrl.variationUrl(variation.product_id)}}">
+            {{variation.variation_color_value}}
+            {{variation.variation_size_value}}
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full-screen image -->
+    <img ng-src="{{detailsCtrl.product.images[0].url}}"/>
+  </div>
+
+
+</div>

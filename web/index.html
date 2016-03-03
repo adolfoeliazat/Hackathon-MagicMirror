@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="hq">
+<head>
+  <title>NewStore HQ</title>
+  <base href="/">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- build:css style.css -->
+  <link rel="stylesheet" type="text/css" href="bower_components/angularjs-datepicker/src/css/angular-datepicker.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/selectize/dist/css/selectize.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/ui-select/dist/select.css" />
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-switch/angular-ui-switch.css" />
+  <link rel="stylesheet" type="text/css" href="app/css/main.css" />
+  <!-- endbuild -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="//fast.fonts.net/cssapi/907f4b9b-91c0-493c-af6b-576a516677b4.css"/>
+</head>
+<body ng-controller="AppCtrl as app" ng-class="{'modal-open': modalOpen}" ng-cloak>
+
+  <div id="navigation">
+    <div id="logo">
+      <a ng-click="showMenu = !!!showMenu">
+        <img src="/img/newstore.logo.svg">
+      </a>
+    </div>
+
+    <div id="menu" ng-show="showMenu">
+      <div><a ui-sref="magicmirror.browser">See more products</a></div>
+      <div><a ui-sref="magicmirror.browser">Request a store associate</a></div>
+    </div>
+  </div>
+
+  <div ui-view="main" id="main"></div>
+
+
+  <!-- build:js app.js -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angularjs-slider/dist/rzslider.js"></script>
+  <script src="bower_components/angular-dynamic-locale/dist/tmhDynamicLocale.js"></script>
+  <!-- <script src="bower_components/angular-foundation/mm-foundation-tpls.js"></script> -->
+  <script src="bower_components/angular-gettext/dist/angular-gettext.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
+  <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="bower_components/angular-ui-switch/angular-ui-switch.js"></script>
+  <script src="bower_components/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/restangular/dist/restangular.js"></script>
+  <script src="bower_components/api-check/dist/api-check.js"></script>
+  <script src="bower_components/angular-formly/dist/formly.js"></script>
+  <script src="bower_components/angular-flash-alert/dist/angular-flash.js"></script>
+  <script src="bower_components/ui-select/dist/select.js"></script>
+  <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="assets/js/localstorage.js"></script>
+  <script src="app/config.js"></script>
+  <script src="app/app.js"></script>
+  <script src="app/components/auth/auth.js"></script>
+  <script src="app/js/bower_overrides/angular_foundation/mm-foundation-tpls.js"></script>
+  <script src="app/shared/api.js"></script>
+  <script src="app/shared/directives.js"></script>
+  <script src="app/shared/constants.js"></script>
+  <script src="app/shared/filters.js"></script>
+  <script src="app/shared/language.js"></script>
+  <script src="app/shared/forms/forms.js"></script>
+
+  <script src="app/components/magicmirror/magicmirror.js"></script>
+  <!-- endbuild -->
+</body>
+</html>

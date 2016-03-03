@@ -1,0 +1,8 @@
+<div ng-repeat="product in ctrl.products" class="product tile">
+  <div class="meta">
+    <span class="title">{{product.title}}</span>
+  </div>
+  <a href="{{product.url()}}">
+    <img ng-src="{{product.images[0].url}}"/>
+  </a>
+</div>

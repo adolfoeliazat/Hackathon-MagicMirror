@@ -1,0 +1,19 @@
+{
+  "preset": "google",
+  "excludeFiles": [
+    "node_modules/**",
+    "bower_components/**",
+    "app/i18n/**",
+    "app/config.js",
+    "app/js/bower_overrides/**"
+  ],
+  "disallowMultipleLineBreaks": null,
+  "disallowMultipleVarDecl": "exceptUndefined",
+  "disallowSpacesInAnonymousFunctionExpression": null,
+  "validateIndentation": 4,
+  "maximumLineLength": 100,
+  "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+  "requireSemicolons": true,
+  "requireDotNotation": null,
+  "requireSpaceAfterLineComment": true
+}

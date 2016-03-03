@@ -1,0 +1,129 @@
+#content-header
+  border-bottom: 1px solid $color-haze-grey
+  .flex-header
+    margin: 0 $page-margin-side 0
+    padding: 29px 0
+    display: flex
+    align-items: center
+    h1
+      flex: 1
+      >span, >a
+        margin-right: $page-margin-side / 2
+        &.back-link
+          color: $color-cadet-grey
+          margin-right: $page-margin-side
+        &.toggle-favorite
+          font-size: 25px
+          color: $color-cadet-grey
+          &.active, &:hover
+            color: $color-mango-orange
+  .full-width-image
+    height: 330px
+    overflow: hidden
+    img
+      width: 100%
+
+#content-meta
+  width: $content-meta
+  float: left
+  padding: $page-margin-side 0
+  dl
+    padding: 0 21px 0 $page-margin-side
+    width: 100%
+    overflow: hidden
+    dt
+      font-weight: $font-weight-bold
+      color: $color-bombay-grey
+    dd
+      margin-bottom: 35px
+  section
+    padding: 49px 0 $page-margin-side
+    border-bottom: 1px solid $color-haze-grey
+    &.first-section
+      padding-top: 0
+      margin-top: -20px
+    dl
+      margin-bottom: 0
+      &.order-header
+        dt, dd
+          line-height: 81px
+        dt
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+          color: $color-newstore-red
+          width: 70%
+        dd
+          text-align: right
+          width: 30%
+      dt
+        font-weight: $font-weight-bold
+        color: $color-bombay-grey
+        float: left
+        width: 40%
+      dd
+        float: left
+        width: 60%
+        margin-bottom: 18px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        &.small-margin
+          margin-bottom: 4px
+  &.meta-large
+    width: $content-meta-large
+
+#content-main
+  float: left
+  width: unquote("calc(100% - #{$content-meta})")
+  height: 90%
+  min-height: 875px
+  border-left: 1px solid $color-haze-grey
+  &.with-big-header
+    height: 63%
+    min-height: 640px
+  &.with-meta-large
+    width: unquote("calc(100% - #{$content-meta-large})")
+
+#order-history
+  margin: 0 $page-margin-side
+  position: relative
+  z-index: 1
+  &::after
+    height: calc(100% - 45px)
+    content: ""
+    position: absolute
+    z-index: -1
+    top: 8px
+    bottom: 0
+    left: 260px
+    border-left: 1px solid $color-haze-grey
+  tr td
+    padding: 0 0 30px 0
+    vertical-align: text-top
+    &:nth-child(1)
+      width: 210px
+      span
+        display: inline-block
+        width: 65px
+        &:nth-child(2)
+          margin-left: 20px
+          text-align: right
+    &:nth-child(2)
+      width: 148px
+
+#image-gallery
+  display: flex
+  flex-direction: row
+  margin: -30px $page-margin-side - 10px
+  flex-wrap: wrap
+  img
+    margin: 10px
+    height: 200px
+  .no-image
+    width: 200px
+    height: 200px
+    background-color: $color-alabaster-grey
+    background-image: url('/img/placeholder.svg')
+    background-repeat: no-repeat
+    background-position: center

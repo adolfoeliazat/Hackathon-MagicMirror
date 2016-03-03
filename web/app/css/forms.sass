@@ -1,0 +1,210 @@
+fieldset
+  border: 0
+  margin: 0
+  padding: 0
+
+fieldset:disabled
+  opacity: .5
+
+// Text Inputs
+input[type="text"],
+input[type="email"],
+input[type="password"],
+  background: transparent
+  color: $color-mineshaft-grey
+  width: 100%
+  height: 36px
+  padding: 0
+  margin-bottom: 30px
+  border-bottom: 1px solid rgba($color-bombay-grey, .5)
+  font-weight: $font-weight-bold
+  &.ng-touched.ng-invalid
+    border-bottom: 1px solid $color-newstore-red
+  &:focus
+    border-bottom: 2px solid $color-newstore-red !important
+
+input:disabled
+  opacity: .5
+
+.floating-label
+  position: relative
+  margin-bottom: 35px
+  input ~ label
+    pointer-events: none
+    color: $color-cadet-grey
+    font-weight: $font-weight-normal
+    padding: 9px 0
+    position: absolute
+    top: 0
+    transition: all .25s ease
+  .ng-pristine.ng-untouched ~ label
+    font-weight: $font-weight-bold
+  .has-value.ng-untouched ~ label
+    font-weight: $font-weight-normal
+  input:focus ~ label
+    color: $color-newstore-red
+    font-weight: $font-weight-bold !important
+  input:focus ~ label, .ng-touched ~ label, .has-value ~ label
+    font-size: 12px
+    top: -23px
+  .ng-touched.ng-invalid ~ label
+    color: $color-newstore-red
+
+// Checkboxes
+.switch-container
+  margin-bottom: 28px
+  display: flex
+  justify-content: space-between
+  .switch
+    border: 1px solid $color-haze-grey
+    background: $color-haze-grey
+    width: 50px
+    height: 25px
+    small
+      width: 25px
+      height: 25px
+      box-shadow: none
+  .switch.checked
+    background: $color-newstore-red
+    border-color: $color-newstore-red
+    small
+      left: 25px
+  label
+    margin-bottom: 10px
+
+.checkbox-container
+  position: relative
+  display: inline-block
+  vertical-align: middle
+
+.checkbox-container > .box
+  position: relative
+  display: block
+  width: 20px
+  height: 20px
+  border: 1px solid $color-haze-grey
+  background-color: $white
+  border-radius: 2px
+
+.checkbox-container > .box > .tick
+  position: absolute
+  left: 5px
+  top: 5px
+  width: 11px
+  height: 7px
+  border-bottom: 3px solid $white
+  border-left: 3px solid $white
+  -webkit-transform: rotate(-45deg)
+  -moz-transform: rotate(-45deg)
+  -o-transform: rotate(-45deg)
+  -ms-transform: rotate(-45deg)
+  transform: rotate(-45deg)
+  display: none
+
+.checkbox-container > input:checked + .box
+  border: none
+  background-color: $color-newstore-red
+
+.checkbox-container > input:checked + .box > .tick
+  display: block
+
+.checkbox-container > input
+  position: absolute
+  outline: none
+  padding: 0
+  width: 20px
+  height: 20px
+  border: none
+  margin: 0
+  opacity: 0
+  z-index: 1
+
+.checkbox-container > input:active + .box
+  border-color: #aaa
+  background-color: #ddd
+
+
+// Select Boxes
+.select
+  height: 98px
+  margin-bottom: 35px
+.ui-select-container
+  margin: 4px 0
+  .selectize-input
+    height: 40px
+    padding: 0
+    border: none
+    box-shadow: none
+    border-bottom: 1px solid rgba($color-bombay-grey, .5)
+    border-radius: 0
+    font-weight: $font-weight-bold
+    input
+      border-bottom: none !important
+    .ui-select-match
+      margin-top: 9px
+  .selectize-input::after
+    right: 0 !important
+  .selectize-input.selectize-focus
+    border-bottom: 2px solid $color-newstore-red !important
+  .selectize-dropdown
+    opacity: 1 !important
+    border: none
+    top: 40px
+    [data-selectable]
+      padding: 0
+  .ui-select-choices-content
+    max-height: 160px
+    border: 1px solid $color-haze-grey
+    .ui-select-choices-row,
+      a
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        display: block
+        height: 40px
+        padding: 11px
+        font-weight: $font-weight-bold
+        color: $color-cadet-grey
+        background: $white
+        &:hover
+          background: $color-alabaster-grey
+        .ui-select-highlight
+          font-weight: $font-weight-bold
+      &.active a
+        background: $white
+        color: $color-newstore-red
+
+// Misc
+.hint
+  color: $color-bombay-grey
+  margin: 0
+
+.validation-message
+  font-size: 12px
+  color: $color-newstore-red
+  position: absolute
+  top: 45px
+
+ng-form.create-mode,
+  .required-field::after
+    content: "*"
+    color: $color-newstore-red
+
+.flex-form
+  display: flex
+  flex-wrap: wrap
+  .inline
+    &.small
+      width: 35%
+    &.medium
+      width: 50%
+    &.large
+      width: 65%
+    &.full
+      width: 100%
+    &.non-last
+      input
+        width: 95%
+    &.last
+      input
+        width: 100%

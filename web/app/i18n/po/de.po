@@ -1,0 +1,211 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: app/components/orders/html/orders/details.html:50
+msgid "Billing Address"
+msgstr "Rechnungsadresse"
+
+#: app/components/orders/html/orders/details.html:65
+msgid "Box"
+msgstr "Box"
+
+#: index.html:51
+msgid "Catalog"
+msgstr "Katalog"
+
+#: app/components/orders/html/orders/details.html:31
+#: app/components/orders/orders.js:51
+msgid "Channel Type"
+msgstr "Kanaltyp"
+
+#: app/components/orders/orders.js:46
+msgid "Consumer"
+msgstr "Verbraucher"
+
+#: app/components/orders/orders.js:53
+msgid "Consumer App"
+msgstr "Verbraucher App"
+
+#: app/components/orders/html/orders/details.html:7
+msgid "Consumer Name"
+msgstr "Consumer Namen"
+
+#: index.html:52
+msgid "Consumers"
+msgstr "Verbraucher"
+
+#: index.html:48
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: app/components/orders/orders.js:47
+msgid "Date & Time"
+msgstr "Terminzeit"
+
+#: app/components/orders/html/orders/details.html:24
+#: app/components/orders/orders.js:60
+msgid "Delivery Status"
+msgstr "Lieferstatus"
+
+#: app/components/auth/html/login.html:11
+msgid "E-Mail Address"
+msgstr "E-Mail-Adresse"
+
+#: app/components/orders/html/orders/details.html:113
+msgid "File"
+msgstr "Datei"
+
+#: app/components/orders/html/orders/details.html:107
+msgid "Financial Documents"
+msgstr "Finanzdokumente"
+
+#: app/components/orders/html/orders/details.html:71
+msgid "Gross"
+msgstr "Brutto"
+
+#: index.html:59
+msgid "Hi, David!"
+msgstr "Hallo, David!"
+
+#: app/components/orders/orders.js:52
+msgid "In Store"
+msgstr "Auf Lager"
+
+#: app/components/orders/html/orders/details.html:118
+msgid "Invoice"
+msgstr "Rechnung"
+
+#: app/components/orders/html/nav.html:8
+msgid "Invoices"
+msgstr "Rechnungen"
+
+#: app/components/orders/html/orders/details.html:60
+msgid "Items"
+msgstr "Produkte"
+
+#: app/components/orders/html/orders/details.html:67
+msgid "Label / Tracking Number"
+msgstr "Etikette / Verfolgungsnummer"
+
+#: app/components/auth/html/login.html:20
+msgid "Login"
+msgstr "Einloggen"
+
+#: index.html:62
+msgid "Logout"
+msgstr "Abmelden"
+
+#: app/components/orders/html/orders/details.html:68
+msgid "Net"
+msgstr "Netto"
+
+#: app/components/orders/orders.js:45
+msgid "Order ID"
+msgstr "Bestellung ID"
+
+#: app/components/orders/html/nav.html:5
+#: app/components/orders/html/orders/overview.html:1 index.html:50
+msgid "Orders"
+msgstr "Bestellungen"
+
+#: app/components/auth/html/login.html:15
+msgid "Password"
+msgstr "Passwort"
+
+#: app/components/orders/html/orders/details.html:12
+msgid "Pay in Method"
+msgstr "Einzahlen Verfahren"
+
+#: app/components/orders/html/orders/details.html:17
+msgid "Pay in Status"
+msgstr "Einzahlen Status"
+
+#: app/components/orders/html/orders/details.html:70
+msgid "Qty"
+msgstr "Menge"
+
+#: app/components/orders/html/nav.html:7
+msgid "Returns"
+msgstr "Retouren"
+
+#: app/components/orders/html/orders/details.html:36
+#: app/components/orders/orders.js:55
+msgid "Sales Channel"
+msgstr "Vertriebskanal"
+
+#: app/shared/smarttable/smarttable.html:23
+msgid "Search anything..."
+msgstr "Suche alles…"
+
+#: app/components/orders/orders.js:41
+msgid "Search by order ID or consumer name"
+msgstr "Suche über Bestellung ID oder Verbrauchername"
+
+#: index.html:53
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: app/components/orders/html/nav.html:6
+msgid "Shipments"
+msgstr "Sendungen"
+
+#: app/components/orders/html/orders/details.html:41
+msgid "Shipping Address"
+msgstr "Versandadresse"
+
+#: app/components/orders/html/orders/details.html:86
+msgid "Shipping Costs"
+msgstr "Versandkosten"
+
+#: app/shared/smarttable/smarttable.html:79
+msgid "Show search params"
+msgstr "Zeige Such -Parameter"
+
+#: app/app.js:36
+msgid "Sorry, we couldn't find that page."
+msgstr "Leider konnten wir nicht finden die Seite."
+
+#: index.html:49
+msgid "Stores"
+msgstr "Geschäfte"
+
+#: app/components/orders/html/orders/details.html:69
+msgid "Tax"
+msgstr "Steuer"
+
+#: app/components/orders/html/orders/details.html:96
+msgid "Total Costs"
+msgstr "Gesamtkosten"
+
+#: app/components/orders/orders.js:50
+msgid "Total Value"
+msgstr "Gesamtwert"
+
+#: app/components/orders/html/orders/details.html:112
+msgid "Type"
+msgstr "Typ"
+
+#: app/shared/smarttable/smarttable.html:36
+#: app/shared/smarttable/smarttable.html:44
+msgid "Wrong date format."
+msgstr "Falsches Datumsformat."
+
+#: app/shared/smarttable/smarttable.html:34
+#: app/shared/smarttable/smarttable.html:42
+msgid "YYYY-MM-DD"
+msgstr "DD.MM.YYYY"
+
+#: index.html:61
+msgid "Your Profile"
+msgstr "Dein Profil"
