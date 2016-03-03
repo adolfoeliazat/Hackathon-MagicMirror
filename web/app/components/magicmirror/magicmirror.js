@@ -3,7 +3,7 @@ angular.module('hq.magicmirror', [])
 .config(function($stateProvider) {
     $stateProvider
         .state('magicmirror', {
-            url: '/magicmirror',
+            url: '/',
             abstract: true,
             views: {
                 'main': {
@@ -21,7 +21,7 @@ angular.module('hq.magicmirror', [])
             }
         })
         .state('magicmirror.browser', {
-            url: '/browse',
+            url: 'browse',
             views: {
                 'main': {
                     templateUrl: '/app/components/magicmirror/html/browser.html',
@@ -30,7 +30,7 @@ angular.module('hq.magicmirror', [])
             }
         })
         .state('magicmirror.details', {
-            url: '/:productId/:catalog/:locale',
+            url: ':productId/:catalog/:locale',
             views: {
                 'main': {
                     templateUrl: '/app/components/magicmirror/html/details.html',
@@ -40,11 +40,13 @@ angular.module('hq.magicmirror', [])
         });
 })
 
-.controller('MirrorCtrl', function(Product) {
-})
+.controller('MirrorCtrl', function(Product) {})
 
 .controller('MirrorBrowser', function(Product) {
-    this.products = Product.api().getList().$object;
+    this.products = Product.api().getList({
+        catalog: 'storefront-catalog-en',
+        locale: 'en-US'
+    }).$object;
 })
 
 .controller('MirrorDetailsCtrl', function($state, $stateParams, gettextCatalog, Product) {
@@ -68,8 +70,8 @@ angular.module('hq.magicmirror', [])
         model.url = function() {
             return $state.href('magicmirror.details', {
                 productId: this.product_id,
-                catalog: this.catalog,
-                locale: this.locale
+                catalog: 'storefront-catalog-en',
+                locale: 'en-US'
             });
 
         };

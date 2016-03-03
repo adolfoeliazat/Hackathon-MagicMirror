@@ -18,11 +18,7 @@ angular.module('hq.api', ['hq.config', 'restangular'])
 .factory('API', function(config, $location, $http) {
     return {
         baseUrl: function(service) {
-            if (service === 'auth') {
-                return this.host() + '/v0/token';
-            } else {
-                return this.host() + '/_/v0/hq';
-            }
+            return this.host() + '/v0/c';
         },
         host: function() {
             if ($location.$$host === 'server') {
