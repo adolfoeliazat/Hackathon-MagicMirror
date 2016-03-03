@@ -116,7 +116,7 @@ gulp.task('jscs', function() {
 gulp.task('config', function () {
   return gulp.src('app/config.json')
   .pipe(ngConfig('hq.config', {
-    environment: 'development'
+    environment: 'production'
   }))
   .pipe(gulp.dest('app'));
 });
