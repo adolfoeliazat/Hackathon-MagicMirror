@@ -109,6 +109,14 @@ angular.module('hq.magicmirror', ['hq.config'])
 })
 
 .factory('ProductPoll', function($http, $interval, $rootScope, config) {
+    /*
+     * The barcode generators on the web add an extra digit to our 12-digit
+     * product IDs, so we're stripping that here.
+     */
+    function toCode(code) {
+        return code.slice(0, 12);
+    }
+
     return {
         scannedProductId: null,
         recommendedProductId: null,
@@ -116,7 +124,7 @@ angular.module('hq.magicmirror', ['hq.config'])
             $interval(function() {
                 var lastId = this.scannedProductId;
                 $http.get(config.requestServiceHost + '/api/scan').then(function(res) {
-                    this.scannedProductId = res.data.product_id;
+                    this.scannedProductId = toCode(res.data.product_id);
                     if (lastId !== this.scannedProductId) {
                         $rootScope.$broadcast('product_scanned', this.scannedProductId)
                     }
@@ -126,7 +134,7 @@ angular.module('hq.magicmirror', ['hq.config'])
             $interval(function() {
                 var lastId = this.recommendedProductId;
                 $http.get(config.requestServiceHost + '/api/recommend').then(function(res) {
-                    this.recommendedProductId = res.data.product_id;
+                    this.recommendedProductId = toCode(res.data.product_id);
                     if (lastId !== this.recommendedProductId) {
                         $rootScope.$broadcast('product_recommended', this.recommendedProductId)
                     }
