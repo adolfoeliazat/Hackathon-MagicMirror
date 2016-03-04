@@ -28,13 +28,12 @@
 
     <div ng-show="showVariations">
       <!-- <a ng-click="showVariations = !!!showVariations" class="show-variations-toggler">X</a> -->
-      <div class="variations">
-        <div ng-repeat="variation in detailsCtrl.product.variations" class="variation">
-          <a href="{{detailsCtrl.variationUrl(variation.product_id)}}">
-            {{variation.variation_color_value}}
-            {{variation.variation_size_value}}
-          </a>
-        </div>
+      <div class="variations show-variations-toggler">
+          <size-and-color
+              colors="detailsCtrl.product.variation_attributes.variation_color_values"
+              variations="detailsCtrl.product.variations"
+          >
+          </size-and-color>
       </div>
     </div>
 
