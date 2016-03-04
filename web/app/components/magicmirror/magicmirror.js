@@ -63,6 +63,10 @@ angular.module('hq.magicmirror', [])
             locale: $stateParams.locale
         });
     };
+
+    this.close = function() {
+        $state.go('magicmirror.main');
+    };
 })
 
 .factory('Product', function($state, Restangular) {

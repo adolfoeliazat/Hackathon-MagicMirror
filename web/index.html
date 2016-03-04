@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-switch/angular-ui-switch.css" />
   <link rel="stylesheet" type="text/css" href="app/css/main.css" />
   <!-- endbuild -->
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
   <link rel="stylesheet" type="text/css" href="//fast.fonts.net/cssapi/907f4b9b-91c0-493c-af6b-576a516677b4.css"/>
 </head>
 <body ng-controller="AppCtrl as app" ng-class="{'modal-open': modalOpen}" ng-cloak>
@@ -24,8 +25,18 @@
     </div>
 
     <div id="menu" ng-show="showMenu">
-      <div><a ui-sref="magicmirror.browser">See more products</a></div>
-      <div><a ui-sref="magicmirror.browser">Request a store associate</a></div>
+      <div>
+        <a ui-sref="magicmirror.browser">
+          <i class="fa fa-shopping-bag"></i>
+          See more products
+        </a>
+      </div>
+      <div>
+        <a ui-sref="magicmirror.browser">
+          <i class="fa fa-bell"></i>
+          Request a store associate
+        </a>
+      </div>
     </div>
   </div>
 
