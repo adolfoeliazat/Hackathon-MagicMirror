@@ -6,73 +6,6 @@ angular.module('hq.filters', [])
     };
 })
 
-.filter('statusBadge', function($sce, orderStates) {
-    return function(statusString, classes, isSafe) {
-        classes = classes || '';
-        var formatted = orderStates[statusString] || statusString;
-
-        if (formatted) {
-            badgeHtml = '<span class="badge ' + classes + ' status-' + statusString + '">' +
-                formatted +
-                '</span>';
-            if (isSafe) {
-                return formatted && $sce.trustAsHtml(badgeHtml);
-            } else {
-                return formatted && badgeHtml;
-            }
-        }
-    };
-})
-
-.filter('money', function($injector, currencySymbols, constants) {
-    var $filter = $injector.get('$filter');
-    var currencyFilter = $filter('currency');
-
-    return function(amount, currency) {
-        var currencySymbol = (currencySymbols[currency]) ?
-            currencySymbols[currency] :
-            currencySymbols[constants.defaultCurrency];
-        return (amount && currencySymbol) ? currencyFilter(amount, currencySymbol, 2) : undefined;
-    };
-})
-
-.filter('time', function($injector) {
-    var $filter = $injector.get('$filter');
-    var dateFilter = $filter('date');
-
-    return function(timeString, formatString) {
-        return dateFilter(
-            new Date('1970-01-01T' + timeString),
-            formatString,
-            '+0000').toLowerCase();
-    };
-})
-
-.filter('days', function($injector) {
-    var $filter = $injector.get('$filter');
-    var dateFilter = $filter('date');
-
-    function toDayString(day) {
-        var d = new Date('1979-01-01T00:00:00');
-        d.setDate(day);
-        return dateFilter(d, 'EEEE', '+0000');
-    }
-
-    return function(days) {
-        if (days.length === 1) {
-            return toDayString(days[0]);
-        } else {
-            return toDayString(days[0]) + ' - ' + toDayString(days[days.length - 1]);
-        }
-    };
-})
-
-.filter('percent', function() {
-    return function(number) {
-        return Math.round(number * 100) + '%';
-    };
-})
-
 .filter('html', function($sce) {
     return function(html) {
         return $sce.trustAsHtml(html + '');
@@ -82,19 +15,6 @@ angular.module('hq.filters', [])
 .filter('boolToYesNo', function(gettextCatalog) {
     return function(input) {
         return (input ? gettextCatalog.getString('yes') : gettextCatalog.getString('no'));
-    };
-})
-
-.filter('displayName', function() {
-    return function(inputObj) {
-        return inputObj && inputObj['first_name'] && inputObj['last_name'] &&
-            inputObj['last_name'] + ', ' + inputObj['first_name'] || '';
-    };
-})
-
-.filter('userAvatar', function(UserAvatar) {
-    return function(inputObj) {
-        return UserAvatar.getHTML(inputObj);
     };
 })
 
@@ -152,14 +72,6 @@ angular.module('hq.filters', [])
             }
         });
         return [].concat(grouped.startingWith, grouped.wordsStartingWith, grouped.substrings);
-    };
-})
-
-.filter('avatar', function() {
-    return function(imgSrc) {
-        if (imgSrc) {
-            return '<img src="' + imgSrc + '" class="circular-thumb"/>';
-        }
     };
 })
 

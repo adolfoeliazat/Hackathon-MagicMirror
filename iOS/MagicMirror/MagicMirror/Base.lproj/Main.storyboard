@@ -20,8 +20,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRa-aC-fAd">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZD-qW-ChW">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="517"/>
+                                        <connections>
+                                            <action selector="restartScanning:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38X-9P-RaW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="0.97254902119999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ScannerContainerView"/>
+                                <constraints>
+                                    <constraint firstItem="sZD-qW-ChW" firstAttribute="leading" secondItem="BRa-aC-fAd" secondAttribute="leading" id="1Cz-dX-5No"/>
+                                    <constraint firstAttribute="trailing" secondItem="sZD-qW-ChW" secondAttribute="trailing" id="5NV-uK-Waw"/>
+                                    <constraint firstItem="sZD-qW-ChW" firstAttribute="top" secondItem="BRa-aC-fAd" secondAttribute="top" id="jN4-Gz-5xp"/>
+                                </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UoS-td-Zxo">
                                 <rect key="frame" x="0.0" y="519" width="600" height="81"/>
@@ -54,15 +67,36 @@
                             <constraint firstItem="UoS-td-Zxo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Zd8-wf-UIO"/>
                             <constraint firstItem="BRa-aC-fAd" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="gKv-7M-2do"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UoS-td-Zxo" secondAttribute="bottom" id="kcd-8P-Cc4"/>
+                            <constraint firstItem="UoS-td-Zxo" firstAttribute="top" secondItem="sZD-qW-ChW" secondAttribute="bottom" constant="2" id="mVO-1f-8GB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="detailsView" destination="UoS-td-Zxo" id="yS6-yU-9x3"/>
                         <outlet property="scannerContainerView" destination="BRa-aC-fAd" id="Xb4-VK-rWO"/>
+                        <segue destination="W7R-Ew-F86" kind="show" identifier="ProductDetails" id="cC8-OD-qlI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="275" y="283"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wGS-9D-wLb">
+            <objects>
+                <viewController storyboardIdentifier="ProductDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W7R-Ew-F86" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ewQ-nk-A1W"/>
+                        <viewControllerLayoutGuide type="bottom" id="KP2-ST-JOe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="U17-XC-MoH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWl-e8-H4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979" y="283"/>
         </scene>
     </scenes>
 </document>
