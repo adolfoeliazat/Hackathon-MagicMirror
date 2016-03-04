@@ -207,7 +207,7 @@ gulp.task('deploy', ['config'], function() {
       host: '172.16.230.15',
       username: 'pi',
       password: 'raspberry',
-      dest: 'magicmirror/web/'
+      dest: 'magicmirror/bin/web/'
     })).on('error', function(err) {
       console.log(err);
     });
