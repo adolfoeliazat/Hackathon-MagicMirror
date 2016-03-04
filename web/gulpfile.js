@@ -201,13 +201,13 @@ gulp.task('production', [
   'production.copyTmpToDist',
 ]);
 
-gulp.task('deploy', ['config'], function() {
+gulp.task('deploy', ['production'], function() {
   return gulp.src('dist/**/*')
     .pipe(scp({
       host: '172.16.230.15',
       username: 'pi',
       password: 'raspberry',
-      dest: 'magicmirror/bin/web/'
+      dest: 'magic_mirror/bin/web/'
     })).on('error', function(err) {
       console.log(err);
     });
