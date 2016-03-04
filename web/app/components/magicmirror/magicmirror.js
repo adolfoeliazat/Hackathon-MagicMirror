@@ -68,7 +68,7 @@ angular.module('hq.magicmirror', ['hq.config'])
         var prodDescr = product.title + ' ' +
                    product.variation_size_value + ' ' +
                    product.variation_color_value;
-        $http.put(config.requestServiceHost + '/request/' + product.product_id, {
+        $http.put(config.requestServiceHost + '/api/request/' + product.product_id, {
             value1: prodDescr
         }).then(function(res) {
             console.log(res);
@@ -114,7 +114,7 @@ angular.module('hq.magicmirror', ['hq.config'])
         init: function() {
             $interval(function() {
                 var lastId = this.productId;
-                $http.get(config.requestServiceHost + '/scan').then(function(res) {
+                $http.get(config.requestServiceHost + '/api/scan').then(function(res) {
                     this.productId = res.data.product_id;
                     if (lastId !== this.productId) {
                         $rootScope.$broadcast('product_scanned', this.productId)
