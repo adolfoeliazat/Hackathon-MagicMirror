@@ -19,6 +19,7 @@ var uglify = require('gulp-uglify');
 var usemin = require('gulp-usemin');
 var useref = require('gulp-useref');
 var util = require('gulp-util');
+var scp = require('gulp-scp2');
 
 /*
  * --------------------------------------------------------------------------
@@ -117,7 +118,7 @@ gulp.task('jscs', function() {
 gulp.task('config', function () {
   return gulp.src('app/config.json')
   .pipe(ngConfig('hq.config', {
-    environment: 'production'
+    environment: 'development'
   }))
   .pipe(gulp.dest('app'));
 });
@@ -199,3 +200,15 @@ gulp.task('production', [
   'production.combineJs',
   'production.copyTmpToDist',
 ]);
+
+gulp.task('deploy', ['config'], function() {
+  return gulp.src('dist/**/*')
+    .pipe(scp({
+      host: '172.16.230.15',
+      username: 'pi',
+      password: 'raspberry',
+      dest: 'magicmirror/web/'
+    })).on('error', function(err) {
+      console.log(err);
+    });
+});
