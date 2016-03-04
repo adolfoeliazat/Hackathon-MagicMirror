@@ -114,7 +114,7 @@ angular.module('hq.magicmirror', ['hq.config'])
      * product IDs, so we're stripping that here.
      */
     function toCode(code) {
-        return code.slice(0, 12);
+        return code && code.slice(0, 12);
     }
 
     return {
