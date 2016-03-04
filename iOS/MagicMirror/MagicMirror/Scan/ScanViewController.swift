@@ -30,6 +30,9 @@ class ScanViewController: UIViewController {
         }
     }
 
+    @IBAction func restartScanning(sender: AnyObject) {
+        self.startCapturing()
+    }
     // MARK: - ViewController Lifecycle
     
     override func viewDidLoad() {
