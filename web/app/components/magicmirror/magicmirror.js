@@ -101,7 +101,7 @@ angular.module('hq.magicmirror', [])
         init: function() {
             $interval(function() {
                 var lastId = this.productId;
-                $http.get('/scan').then(function(res) {
+                $http.get('http://172.16.188.115:8080/scan').then(function(res) {
                     this.productId = res.data.product_id;
                     if (lastId !== this.productId) {
                         $rootScope.$broadcast('product_scanned', this.productId)
