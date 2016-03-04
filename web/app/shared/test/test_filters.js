@@ -29,128 +29,6 @@ describe('hq.filters', function() {
         );
     });
 
-    describe('statusBadge', function() {
-        it('should display a status string as badge', inject(function(statusBadgeFilter) {
-            expect(statusBadgeFilter('picked_up').toString()).toEqual(
-                '<span class="badge  status-picked_up">Picked Up</span>'
-            );
-        }));
-
-        it('should display a badge with custom class', inject(function(statusBadgeFilter) {
-            expect(statusBadgeFilter('picked_up', 'custom-class').toString()).toEqual(
-                '<span class="badge custom-class status-picked_up">Picked Up</span>'
-            );
-        }));
-
-        it(
-            'should display badge with custom class and safe HTML',
-            inject(function(statusBadgeFilter) {
-                expect(statusBadgeFilter('picked_up', 'custom-class', true).toString()).toEqual(
-                    '<span class="badge custom-class status-picked_up">Picked Up</span>'
-                );
-            })
-        );
-
-        it('should return undefined for undefined input', inject(function(statusBadgeFilter) {
-            expect(statusBadgeFilter(undefined)).toBeUndefined();
-        }));
-
-        it('should return input string if value is not known', inject(function(statusBadgeFilter) {
-            expect(statusBadgeFilter('unknown_value').toString()).toEqual(
-                '<span class="badge  status-unknown_value">unknown_value</span>'
-            );
-        }));
-    });
-
-    describe('money', function() {
-        it('should place th $ symbol when currency is USD',
-            inject(function(moneyFilter) {
-                expect(moneyFilter(12.34, 'USD')).toEqual('$12.34');
-            })
-        );
-
-        it('should place the € symbol when currency is EUR',
-            inject(function(moneyFilter) {
-                expect(moneyFilter(12.34, 'EUR')).toEqual('€12.34');
-            })
-        );
-
-        it('should format currency according to locale "en"',
-            inject(function(moneyFilter) {
-                Language.setLanguage('en', function() {
-                    expect(moneyFilter(12.34, 'USD')).toEqual('$12.34');
-                });
-            })
-        );
-
-        it('should format currency according to locale "de"',
-            inject(function(moneyFilter) {
-                $http.expectGET('/i18n/de.json').respond(200);
-                Language.setLanguage('de', function() {
-                    expect(moneyFilter(12.34, 'EUR')).toEqual('12,34 €');
-                });
-            })
-        );
-
-        it('should place currency code before amount when currency symbol is not defined',
-            inject(function(moneyFilter) {
-                Language.setLanguage('en', function() {
-                    expect(moneyFilter(1234, 'JPY')).toEqual('JPY1,234.00');
-                });
-            })
-        );
-
-        it('should display two decimal places always',
-            inject(function(moneyFilter) {
-                Language.setLanguage('en', function() {
-                    expect(moneyFilter(12, 'USD')).toEqual('$12.00');
-                });
-            })
-        );
-
-        it('should not fail on undefined input',
-            inject(function(moneyFilter) {
-                expect(moneyFilter()).toBeUndefined();
-            })
-        );
-    });
-
-    describe('time', function() {
-        it('should convert a time string into a different time string',
-            inject(function(Language, timeFilter) {
-                Language.setLanguage('en', function() {
-                    expect(timeFilter('10:00', 'hh:mma')).toEqual('10:00am');
-                });
-            })
-        );
-    });
-
-    describe('days', function() {
-        it('should represent a single Sunday-0-indexed value as a string',
-            inject(function(daysFilter, Language) {
-                Language.setLanguage('en', function() {
-                    expect(daysFilter([0])).toEqual('Sunday');
-                });
-            })
-        );
-
-        it('should represent a single Sunday-0-indexed value as a locale-aware string',
-            inject(function(daysFilter, Language) {
-                $http.expectGET('/i18n/de.json').respond(200);
-                Language.setLanguage('de', function() {
-                    expect(daysFilter([0])).toEqual('Sonntag');
-                });
-            })
-        );
-
-        it('should print an interval', inject(function(daysFilter, Language) {
-            $http.expectGET('/i18n/en.json').respond(200);
-            Language.setLanguage('en', function() {
-                expect(daysFilter([0, 1, 2, 3])).toEqual('Sunday - Wednesday');
-            });
-        }));
-    });
-
     describe('boolToYesNo', function() {
         it('should transform true to "Yes"',
             inject(function(boolToYesNoFilter) {
@@ -163,38 +41,6 @@ describe('hq.filters', function() {
                 expect(boolToYesNoFilter(false)).toEqual('no');
             })
         );
-    });
-
-    describe('percent', function() {
-        it('should format simple floats', inject(function(percentFilter) {
-            expect(percentFilter(.1)).toEqual('10%');
-        }));
-    });
-
-    describe('displayName', function() {
-        it('should transform an object containing first_name and last_name to ' +
-            '"<last_name>, <first_name>"', inject(function(displayNameFilter) {
-                var nameObj = {
-                    first_name: 'John',
-                    last_name: 'Doe',
-                };
-                expect(displayNameFilter(nameObj)).toEqual('Doe, John');
-            })
-        );
-
-        it('should transform an object containing even partly missing props to ""',
-            inject(function(displayNameFilter) {
-                var nameObj = {
-                    first_name: undefined,
-                    last_name: 'Doe',
-                };
-                expect(displayNameFilter(nameObj)).toBe('');
-            })
-        );
-
-        it('should not fail for undefined', inject(function(displayNameFilter) {
-            expect(displayNameFilter(undefined)).toBe('');
-        }));
     });
 
     describe('link', function() {
@@ -241,46 +87,6 @@ describe('hq.filters', function() {
         }));
     });
 
-    describe('userAvatar', function() {
-        it('should display an <img> element', inject(function(userAvatarFilter) {
-            var user = {
-                first_name: 'John',
-                last_name: 'Doe',
-                image_url: 'http://placehold.it/40',
-            };
-            expect(userAvatarFilter(user)).
-            toEqual('<img class="circular-thumb" src="http://placehold.it/40" />');
-        }));
-
-        it('should display an <span> element with the initials', inject(function(userAvatarFilter) {
-            var user = {
-                first_name: 'John',
-                last_name: 'Doe',
-            };
-            expect(userAvatarFilter(user)).
-            toEqual('<span class="circular-initials">JD</span>');
-        }));
-
-        it('should display an <span> element with one initial', inject(function(userAvatarFilter) {
-            var user = {
-                first_name: 'John',
-            };
-            expect(userAvatarFilter(user)).
-            toEqual('<span class="circular-initials">J</span>');
-        }));
-
-        it(
-            'should display an <span> element with the letter "u"',
-            inject(function(userAvatarFilter) {
-                var user = {
-                    foo: 'bar',
-                };
-                expect(userAvatarFilter(user)).
-                toEqual('<span class="circular-initials">u</span>');
-            })
-        );
-    });
-
     describe('mainImage', function() {
         it('should return the url the correct item in the given array', inject(
             function(mainImageFilter) {
@@ -319,22 +125,6 @@ describe('hq.filters', function() {
             function(mainImageFilter) {
                 var images = null;
                 expect(mainImageFilter(images)).
-                toBeUndefined;
-            })
-        );
-    });
-
-    describe('avatar', function() {
-        it('should return <img> element properly set', inject(
-            function(avatarFilter) {
-                expect(avatarFilter('http://placehold.it/30')).
-                toEqual('<img src="http://placehold.it/30" class="circular-thumb"/>');
-            })
-        );
-
-        it('should return undefined if the input is null', inject(
-            function(avatarFilter) {
-                expect(avatarFilter(null)).
                 toBeUndefined;
             })
         );

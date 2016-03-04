@@ -8,6 +8,12 @@
       {{detailsCtrl.product.variation_size_value}}
     </div>
 
+    <div id="close-ui">
+      <a ng-click="detailsCtrl.close()">
+        <i class="fa fa-times-circle"></i>
+      </a>
+    </div>
+
     <!-- Variation picker -->
     <div ng-show="!showVariations" class="show-variations-toggler">
       <a ng-click="showVariations = !!!showVariations">Pick a different color or size...</a>
