@@ -47,7 +47,7 @@ angular.module('hq', [
     var poll = ProductPoll.init();
     $rootScope.$on('product_scanned', function(msg, productId) {
         console.log('Product scanned: ', productId);
-        $state.go('magicmirror.details', {
+        productId && $state.go('magicmirror.details', {
             productId: productId,
             catalog: 'storefront-catalog-en',
             locale: 'en-US'
