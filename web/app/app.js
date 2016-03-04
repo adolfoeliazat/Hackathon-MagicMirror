@@ -18,6 +18,8 @@ angular.module('hq', [
 ])
 
 .config(function($locationProvider, $stateProvider, $urlRouterProvider) {
+    $locationProvider.html5Mode(true).hashPrefix('!');
+
     $urlRouterProvider.otherwise('/not-found');
 
     $stateProvider.state('404', {
