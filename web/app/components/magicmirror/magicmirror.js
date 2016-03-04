@@ -69,7 +69,8 @@ angular.module('hq.magicmirror', ['hq.config'])
                    product.variation_size_value + ' ' +
                    product.variation_color_value;
         $http.put(config.requestServiceHost + '/api/request/' + product.product_id, {
-            value1: prodDescr
+            value1: prodDescr,
+            value2: product.images[0].url,
         }).then(function(res) {
             console.log(res);
         })
