@@ -1,4 +1,4 @@
-angular.module('hq.magicmirror', [])
+angular.module('hq.magicmirror', ['hq.config'])
 
 .config(function($stateProvider) {
     $stateProvider
@@ -49,7 +49,7 @@ angular.module('hq.magicmirror', [])
     }).$object;
 })
 
-.controller('MirrorDetailsCtrl', function($scope, $state, $stateParams, gettextCatalog, Product) {
+.controller('MirrorDetailsCtrl', function($state, $stateParams, Product, $http, config) {
     this.product = Product.one(
         $stateParams.productId,
         $stateParams.catalog,
@@ -64,9 +64,22 @@ angular.module('hq.magicmirror', [])
         });
     };
 
+    this.requestProduct = function(product) {
+        var prodDescr = product.title + ' ' +
+                   product.variation_size_value + ' ' +
+                   product.variation_color_value;
+        $http.put(config.requestServiceHost + '/request/' + product.product_id, {
+            value1: prodDescr
+        }).then(function(res) {
+            console.log(res);
+        })
+    };
+
     this.close = function() {
         $state.go('magicmirror.main');
     };
+
+
 })
 
 .factory('Product', function($state, Restangular) {
@@ -95,13 +108,13 @@ angular.module('hq.magicmirror', [])
     };
 })
 
-.factory('ProductPoll', function($http, $interval, $rootScope) {
+.factory('ProductPoll', function($http, $interval, $rootScope, config) {
     return {
         productId: null,
         init: function() {
             $interval(function() {
                 var lastId = this.productId;
-                $http.get('http://172.16.188.115:8080/scan').then(function(res) {
+                $http.get(config.requestServiceHost + '/scan').then(function(res) {
                     this.productId = res.data.product_id;
                     if (lastId !== this.productId) {
                         $rootScope.$broadcast('product_scanned', this.productId)

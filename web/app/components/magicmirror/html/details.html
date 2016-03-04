@@ -8,9 +8,16 @@
       {{detailsCtrl.product.variation_size_value}}
     </div>
 
-    <div id="close-ui">
+    <div id="close-ui" class="icon-ui">
       <a ng-click="detailsCtrl.close()">
         <i class="fa fa-times-circle"></i>
+      </a>
+    </div>
+
+    <div id="request-ui" class="icon-ui">
+      <a ng-click="detailsCtrl.requestProduct(detailsCtrl.product)">
+        <i class="fa fa-arrow-circle-right"></i>
+        Request this product
       </a>
     </div>
 
