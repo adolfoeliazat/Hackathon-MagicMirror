@@ -49,7 +49,7 @@ angular.module('hq.magicmirror', [])
     }).$object;
 })
 
-.controller('MirrorDetailsCtrl', function($state, $stateParams, gettextCatalog, Product) {
+.controller('MirrorDetailsCtrl', function($scope, $state, $stateParams, gettextCatalog, Product) {
     this.product = Product.one(
         $stateParams.productId,
         $stateParams.catalog,
@@ -89,4 +89,21 @@ angular.module('hq.magicmirror', [])
             });
         }
     };
+})
+
+.factory('ProductPoll', function($http, $interval, $rootScope) {
+    return {
+        productId: null,
+        init: function() {
+            $interval(function() {
+                var lastId = this.productId;
+                $http.get('/scan').then(function(res) {
+                    this.productId = res.data.product_id;
+                    if (lastId !== this.productId) {
+                        $rootScope.$broadcast('product_scanned', this.productId)
+                    }
+                });
+            }, 2000);
+        }
+    }
 });

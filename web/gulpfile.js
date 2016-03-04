@@ -50,7 +50,8 @@ gulp.task('serve', ['config', 'sass'], function() {
       return [
         modRewrite([
           "^/img/(.*)$ /assets/img/$1",
-          "^/i18n/(.*)$ /app/i18n/$1"
+          "^/i18n/(.*)$ /app/i18n/$1",
+          "^/scan$ /assets/scan",
         ])
       ];
     }
