@@ -50,7 +50,8 @@ gulp.task('serve', ['config', 'sass'], function() {
       return [
         modRewrite([
           "^/img/(.*)$ /assets/img/$1",
-          "^/i18n/(.*)$ /app/i18n/$1"
+          "^/i18n/(.*)$ /app/i18n/$1",
+          "^/scan$ /assets/scan",
         ])
       ];
     }
@@ -116,7 +117,7 @@ gulp.task('jscs', function() {
 gulp.task('config', function () {
   return gulp.src('app/config.json')
   .pipe(ngConfig('hq.config', {
-    environment: 'development'
+    environment: 'production'
   }))
   .pipe(gulp.dest('app'));
 });

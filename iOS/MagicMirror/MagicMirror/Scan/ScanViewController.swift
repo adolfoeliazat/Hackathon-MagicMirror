@@ -129,14 +129,62 @@ class ScanViewController: UIViewController {
 // MARK: - QRScannerControllerDelegate
 extension ScanViewController: QRScannerControllerDelegate {
     // If a QR code was detected this delegate method will be called
-    func videoCaptureController(controller: QRScannerController, didRecognizeQRWithString string: String) {
+    func videoCaptureController(controller: QRScannerController, didRecognizeQRWithString string: String) -> Bool {
 
         let scanResult = string
         print("code scanned \(scanResult)")
-        //TODO: call backend here
+        // TODO transform 12ab34cd56 to product id
+        controller.stopCaptureSession()
+        
+        // Show logistic order
+        GCD.async(GCD.mainQueue()) { [weak self] in
+            self!.processCode(string)
+        }
+        
+        return true
+
+
+        
+                //TODO: call backend here
     }
     
-    // In case of a failure this delegate method will be called
+    func processCode(scanResult: String){
+        let productId = self.getProductId(scanResult)
+        if let url = NSURL(string: "http://172.16.230.15:8080"  + "/scan/" + productId) {
+            
+            let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+            let request = NSMutableURLRequest(URL: url)
+            request.HTTPMethod = "PUT"
+            let postBody = "product_id=\(productId)"
+            let postData = postBody.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+            session.uploadTaskWithRequest(request, fromData: postData, completionHandler: { data, response, error in
+                let successfulResponse = (response as? NSHTTPURLResponse)?.statusCode == 201
+                if successfulResponse && error == nil {
+                    //success
+                    print("scucess")
+                } else {
+                    print("error")
+                }
+            }).resume()
+            
+            
+        }
+
+    }
+    
+    func getProductId(barCode: String) -> String{
+        if barCode == "12ab34cd56" {
+            return "609717696140"
+        }
+        
+        if barCode == "4260191730032" {
+            return "609717716671"
+        }
+        
+        return ""
+    }
+    
+      // In case of a failure this delegate method will be called
     func videoCaptureControllerDidFailToAquireCameraAccess(controller: QRScannerController) {
         GCD.async(GCD.mainQueue()) {
             // TODO: Error handling
