@@ -157,7 +157,16 @@ public class QRScannerController: NSObject {
     private func configureMetaDataForAVCaptureSession(session: AVCaptureSession) {
         let captureMetadataOutput = AVCaptureMetadataOutput()
         session.addOutput(captureMetadataOutput)
-        captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
+        captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeUPCECode,
+            AVMetadataObjectTypeCode39Code,
+            AVMetadataObjectTypeCode39Mod43Code,
+            AVMetadataObjectTypeEAN13Code,
+            AVMetadataObjectTypeEAN8Code,
+            AVMetadataObjectTypeCode93Code,
+            AVMetadataObjectTypeCode128Code,
+            AVMetadataObjectTypePDF417Code,
+            AVMetadataObjectTypeQRCode,
+            AVMetadataObjectTypeAztecCode]
         captureMetadataOutput.setMetadataObjectsDelegate(self, queue: self.metadataQueue)
     }
     
@@ -326,7 +335,8 @@ extension QRScannerController: AVCaptureMetadataOutputObjectsDelegate {
     public func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
         if let metadataMachineReadableCodeObject = metadataObjects.first as? AVMetadataMachineReadableCodeObject,
             let qrString = metadataMachineReadableCodeObject.stringValue
-            where metadataMachineReadableCodeObject.type == AVMetadataObjectTypeQRCode && self.scanning {
+            where self.scanning {
+                print(qrString)
                 self.captureSession.stopRunning()
                 GCD.async(GCD.mainQueue()) { [unowned self] in
                     self.scanning = false
@@ -348,7 +358,7 @@ public protocol QRScannerControllerDelegate: class {
      - parameter controller: The controller that did the recognition.
      - parameter string:     The decoded string from the QR code.
      */
-    func videoCaptureController(controller: QRScannerController, didRecognizeQRWithString string: String)
+    func videoCaptureController(controller: QRScannerController, didRecognizeQRWithString string: String)  -> Bool
     
     /**
      This delegate method is called when a scanning error occurs.

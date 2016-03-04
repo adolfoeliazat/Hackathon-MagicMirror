@@ -9,11 +9,9 @@ angular.module('hq', [
     'ui.router',
 
     'hq.api',
-    'hq.auth',
     'hq.constants',
     'hq.directives',
     'hq.filters',
-    'hq.forms',
     'hq.language',
     'hq.templates',
     'hq.magicmirror',
@@ -42,33 +40,10 @@ angular.module('hq', [
     $rootScope,
     $state,
     API,
-    Auth,
-    Language,
     Restangular
 ) {
     Restangular.setBaseUrl(API.baseUrl());
 
-    this.showNavigation = function() {
-        return Auth.loggedIn() && $state.current.name !== 'login';
-    };
-
-    $rootScope.$on('$stateChangeStart', function(event, toState) {
-        if (Auth.loginRequired(toState) && !Auth.loggedIn()) {
-            $state.transitionTo('login');
-            event.preventDefault();
-        }
-    });
-
-    $rootScope.$on('unauthorized', function() {
-        Auth.logout();
-        $state.transitionTo('login');
-    });
-
-    Language.setCurrentLanguage();
-
-    if (Auth.loggedIn()) {
-        Auth.updateUser();
-    }
 });
 
 // Mock out template cache module (gets redefined in app.js upon production build).
