@@ -53,6 +53,15 @@ angular.module('hq', [
             locale: 'en-US'
         });
     });
+
+    $rootScope.$on('product_recommended', function(msg, productId) {
+        console.log('Product recommended: ', productId);
+        productId && $state.go('magicmirror.details', {
+            productId: productId,
+            catalog: 'storefront-catalog-en',
+            locale: 'en-US'
+        });
+    });
 });
 
 // Mock out template cache module (gets redefined in app.js upon production build).

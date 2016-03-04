@@ -110,14 +110,25 @@ angular.module('hq.magicmirror', ['hq.config'])
 
 .factory('ProductPoll', function($http, $interval, $rootScope, config) {
     return {
-        productId: null,
+        scannedProductId: null,
+        recommendedProductId: null,
         init: function() {
             $interval(function() {
-                var lastId = this.productId;
+                var lastId = this.scannedProductId;
                 $http.get(config.requestServiceHost + '/api/scan').then(function(res) {
-                    this.productId = res.data.product_id;
-                    if (lastId !== this.productId) {
-                        $rootScope.$broadcast('product_scanned', this.productId)
+                    this.scannedProductId = res.data.product_id;
+                    if (lastId !== this.scannedProductId) {
+                        $rootScope.$broadcast('product_scanned', this.scannedProductId)
+                    }
+                });
+            }, 2000);
+
+            $interval(function() {
+                var lastId = this.recommendedProductId;
+                $http.get(config.requestServiceHost + '/api/recommend').then(function(res) {
+                    this.recommendedProductId = res.data.product_id;
+                    if (lastId !== this.recommendedProductId) {
+                        $rootScope.$broadcast('product_recommended', this.recommendedProductId)
                     }
                 });
             }, 2000);
