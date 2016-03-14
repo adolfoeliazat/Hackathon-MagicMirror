@@ -1,9 +1,4 @@
-# newstore-hq
-
-[![Build Status](https://magnum.travis-ci.com/NewStore/newstore-hq.svg?token=HPjsSDyazFBuqzLQzqKe&branch=master)](https://magnum.travis-ci.com/NewStore/newstore-hq)
-
-## Running HQ app locally (Mac OSX)
-
+## Installation
 * Install nodejs
 
 ```
@@ -22,9 +17,16 @@ $ npm install
 $ npm run serve
 ```
 
-Note: You'll also need running `ponydock`! Refer to this readme for help: https://github.com/NewStore/ponydock#ponydock
 
-* Compile SASS (also included in the `serve` command)
+## Development mode
 ```
-$ [npm run] gulp sass [--watch]
+$ npm run serve
 ```
+
+## Production mode
+```
+$ npm run gulp production
+$ node.server.js
+```
+This builds the app for production and serves it and the request/recommend/scan API
+via node.

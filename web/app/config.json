@@ -2,7 +2,7 @@
   "development": {
     "config": {
       "apiHost": "https://newstoredev.newstore.io",
-      "requestServiceHost": "http://172.16.230.15:8080",
+      "requestServiceHost": "http://localhost:3000",
       "google": {
         "apiKey": "AIzaSyCr15aLSPxf_xea2zldxE3tJSGAY5AtrS8"
       }

@@ -125,7 +125,7 @@ angular.module('hq.magicmirror', ['hq.config'])
             $interval(function() {
                 var lastId = this.scannedProductId;
                 $http.get(config.requestServiceHost + '/api/scan').then(function(res) {
-                    this.scannedProductId = toCode(res.data.product_id);
+                    this.scannedProductId = toCode(res.data);
                     if (lastId !== this.scannedProductId) {
                         $rootScope.$broadcast('product_scanned', this.scannedProductId)
                     }
@@ -135,7 +135,7 @@ angular.module('hq.magicmirror', ['hq.config'])
             $interval(function() {
                 var lastId = this.recommendedProductId;
                 $http.get(config.requestServiceHost + '/api/recommend').then(function(res) {
-                    this.recommendedProductId = toCode(res.data.product_id);
+                    this.recommendedProductId = toCode(res.data);
                     if (lastId !== this.recommendedProductId) {
                         $rootScope.$broadcast('product_recommended', this.recommendedProductId)
                     }
